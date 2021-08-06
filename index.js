@@ -15,7 +15,7 @@ app.get('/', function (req, res) {
 });
 
 // Facebook Webhook
-app.get('/webhook', function (req, res) {
+app.post('/webhook', function (req, res) {
         console.log("welcome!");
         var params = url.parse(req.url, true).query;
         console.log(params);
