@@ -17,6 +17,7 @@ app.get('/', function (req, res) {
 // Facebook Webhook
 app.post('/webhook', function (req, res) {
         console.log("post-welcome!");
+        console.log(req);
         var params = url.parse(req.url, true).query;
         console.log(params);
         if (params['hub.verify_token'] === 'testbot_verify_token') {
@@ -32,6 +33,7 @@ app.post('/webhook', function (req, res) {
 });
 app.get('/webhook', function (req, res) {
         console.log("get-welcome!");
+        console.log(req);
         var params = url.parse(req.url, true).query;
         console.log(params);
         if (params['hub.verify_token'] === 'testbot_verify_token') {
