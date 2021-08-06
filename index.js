@@ -35,7 +35,6 @@ app.get('/webhook', function (req, res) {
             res.send(params['hub.challenge']);
         } else {
          var entry = req.body.entry;
-
           console.log("entry--->"+JSON.stringify(entry));
 //           res.send('Invalid verify token');
         }
