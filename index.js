@@ -16,7 +16,22 @@ app.get('/', function (req, res) {
 
 // Facebook Webhook
 app.post('/webhook', function (req, res) {
-        console.log("welcome!");
+        console.log("post-welcome!");
+        var params = url.parse(req.url, true).query;
+        console.log(params);
+        if (params['hub.verify_token'] === 'testbot_verify_token') {
+            res.send(params['hub.challenge']);
+        } else {
+            res.send('Invalid verify token');
+        }
+//    if (req.query['hub.verify_token'] === 'testbot_verify_token') {
+//        res.send(req.query['hub.challenge']);
+//    } else {
+//        res.send('Invalid verify token');
+//    }
+});
+app.get('/webhook', function (req, res) {
+        console.log("get-welcome!");
         var params = url.parse(req.url, true).query;
         console.log(params);
         if (params['hub.verify_token'] === 'testbot_verify_token') {
