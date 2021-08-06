@@ -20,6 +20,12 @@ app.post('/webhook', function (req, res) {
       var entry = req.body.entry;
     console.log("entry--->"+entry)
     console.log("entry[0]--->"+entry[0])
+     var obj= entry[0];
+      Object.keys(obj).forEach(function(key){
+           console.log(key,obj[key]);
+
+      });
+
     var events = entry[0].messaging
     console.log("events--->"+events)
 
@@ -49,6 +55,12 @@ app.get('/webhook', function (req, res) {
           var entry = req.body.entry;
           console.log("entry--->"+entry)
           console.log("entry[0]--->"+entry[0])
+
+          var obj= entry[0];
+          Object.keys(obj).forEach(function(key){
+               console.log(key,obj[key]);
+
+          });
           var events = entry[0].messaging
           console.log("events--->"+events)
 
