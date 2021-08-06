@@ -24,7 +24,7 @@ app.post('/webhook', function (req, res) {
         } else {
              var entry = req.body.entry;
               console.log("entry--->"+JSON.stringify(entry));
-//            res.send('Invalid verify token');
+            res.send('Invalid verify token');
         }
 });
 app.get('/webhook', function (req, res) {
@@ -36,6 +36,6 @@ app.get('/webhook', function (req, res) {
         } else {
          var entry = req.body.entry;
           console.log("entry--->"+JSON.stringify(entry));
-//           res.send('Invalid verify token');
+           res.send('Invalid verify token');
         }
 });
