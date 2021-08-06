@@ -26,7 +26,7 @@ app.post('/webhook', function (req, res) {
       for (i = 0; i < events.length; i++) {
           var event = events[i];
           if (event.message && event.message.text) {
-              console.log("text--->"+event.message.text});
+              console.log("text--->"+event.message.text);
           }
       }
         var params = url.parse(req.url, true).query;
@@ -55,7 +55,7 @@ app.get('/webhook', function (req, res) {
             for (i = 0; i < events.length; i++) {
                 var event = events[i];
                 if (event.message && event.message.text) {
-                    console.log("text--->"+event.message.text});
+                    console.log("text--->"+event.message.text);
                 }
             }
 
